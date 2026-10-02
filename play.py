@@ -1,17 +1,25 @@
-from domain.character import Character
+from domain.classes import Warrior, Mage, Rogue, Cleric
 
 if __name__ == "__main__":
-    hero = Character("Aria", 100, 15, 5)
-    goblin = Character("Goblin", 30, 5, 5)
-    ironman = Character("ironman", 150, 100, 50)
-    thor = Character("thor", 200, 150, 150)
-    
-    print(hero.describe())
-    print(goblin.describe())
-    print(ironman.describe())
-    
-    hero.attack(goblin)
-    print(goblin.describe())
-    
-    thor.attack(ironman)
-    print(ironman.describe())
+    # Create characters
+    warrior = Warrior("Aragorn")
+    mage = Mage("Gandalf")
+    rogue = Rogue("Legolas")
+    cleric = Cleric("Elrond")
+
+    # Display initial states
+    print(warrior.describe())
+    print(mage.describe())
+    print(rogue.describe())
+    print(cleric.describe())
+
+    # Simulate a battle
+    warrior.attack(mage)
+    mage.special_ability(warrior)
+    rogue.special_ability(mage)
+    cleric.special_ability(warrior)
+
+    # Display final states
+    print(warrior.describe())
+    print(mage.describe())
+    print(rogue.describe())
