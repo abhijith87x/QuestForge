@@ -1,25 +1,39 @@
 from domain.classes import Warrior, Mage, Rogue, Cleric
+from domain.items import HealthPotion, Weapon, Armor
+from domain.exceptions import QuestForgeError
 
 if __name__ == "__main__":
-    # Create characters
-    warrior = Warrior("Aragorn")
-    mage = Mage("Gandalf")
-    rogue = Rogue("Legolas")
-    cleric = Cleric("Elrond")
 
-    # Display initial states
-    print(warrior.describe())
-    print(mage.describe())
-    print(rogue.describe())
-    print(cleric.describe())
+#   warrior = Warrior("abhi")
+# Create items
+# potion1 = HealthPotion()
+# potion2 = HealthPotion()
+# weapon = Weapon("Iron Sword", 10)
+# armor = Armor("Steel Armor", 5)
 
-    # Simulate a battle
-    warrior.attack(mage)
-    mage.special_ability(warrior)
-    rogue.special_ability(mage)
-    cleric.special_ability(warrior)
+# # Add them to Warrior's inventory
+# warrior.inventory.add(potion1)
+# warrior.inventory.add(potion2)
+# warrior.inventory.add(weapon)
+# warrior.inventory.add(armor)
 
-    # Display final states
-    print(warrior.describe())
-    print(mage.describe())
-    print(rogue.describe())
+# # See inventory
+# print(warrior.inventory.list_items())
+
+# warrior.attack(warrior)
+# print(warrior.describe())
+#   warrior.inventory.use(0, warrior)  # Use first potion
+# print(warrior.describe())
+
+    mage =  Mage("Sylla")
+    warrior = Warrior("Bram")
+
+    try:
+        warrior.inventory.use(0, warrior) 
+        mage.special_ability(warrior)
+        mage.special_ability(warrior)
+        mage.special_ability(warrior)
+        
+    except QuestForgeError as e:
+        print(f"Action failed: {e}")
+    
