@@ -1,0 +1,17 @@
+{
+  "turn_count": 0,
+  "party": [
+    {
+      "type": "Warrior",
+      "name": "Bram",
+      "health": 120,
+      "attack_power": 20
+    },
+    {
+      "type": "Mage",
+      "name": "Sylla",
+      "health": 80,
+      "attack_power": 10
+    }
+  ]
+}
